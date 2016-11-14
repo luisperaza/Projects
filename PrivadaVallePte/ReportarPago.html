@@ -1,6 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReportarPago.aspx.cs" Inherits="PrivadaVallePte.ReportarPago" %>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -57,7 +55,7 @@
             <div class="form-group">
                 <label for="TipoPago" class="control-label col-sm-3 hidden-xs">Tipo de Pago:</label>
                 <div class="col-sm-6 selectCcontainer">
-                    <select class="form-control" name="size">
+                    <select class="form-control" name="tipoPago">
                         <option value="">--Seleccionar el Tipo de Pago--</option>
                         <option value="1">Pago de Mantenimiento</option>
                         <option value="2">Pago de Impermeabilizacion 2016</option>
@@ -67,20 +65,40 @@
             </div>
             
             <div class="form-group">
-                <label for="dtp_input2" class="col-sm-3 control-label">Fecha de Pago:</label>
+                <label for="dtp_input2" class="col-sm-3 control-label hidden-xs">Fecha de Pago:</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
                     <input class="form-control" size="16" type="text" value="" readonly="true"/>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
-                <input type="hidden" id="dtp_input2" value="" /><br/>
+                <input type="hidden" id="dtp_input2" value="" />
             </div>
 
+            <div class="form-group">
+                <label for="banco" class="control-label col-sm-3 hidden-xs">Banco:</label>
+                <div class="col-sm-6 selectCcontainer">
+                    <select class="form-control" name="banco">
+                        <option value="">-- Seleccionar Banco --</option>
+                        <option value="1">Banorte</option>
+                        <option value="2">Bancomer</option>
+                        <option value="3">Banamex</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Referencia" class="control-label col-sm-3 hidden-xs">Referencia:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="txtReferencia" placeholder="Referencia Bancaria" />
+                </div>
+            </div>
+
+            <div class="col-sm-9">
+                <button type="submit" class="btn btn-primary pull-right">Enviar</button>
+            </div>
         </form>
     </div>
 
-
-</body>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="./bootstrap/js/jquery-3.1.1.min.js"></script>
@@ -102,4 +120,6 @@
             forceParse: 0
         });
     </script>
+</body>
+
 </html>
